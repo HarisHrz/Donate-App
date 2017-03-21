@@ -1,0 +1,45 @@
+<form ng-submit="ctrl.onDonate()">
+    <div class="container container-border">
+        <div class="row">
+            <div class="col-xs-12 ">
+                <div class="container-fluid bg-grey">
+                    <h4 ng-if="!ctrl.isCompleted"> ${{ctrl.balance}} still needed for this project. </h4>
+                    <h4 ng-if="ctrl.isCompleted"> Hurray!! </h4>
+                </div>
+                <div class="custom-progress-bar">
+                    <uib-progressbar type="custom-type" syte="height:27px;" animate="true" max="ctrl.maxValue" tooltip-append-to-body="true" tooltip-is-ope="true" value="ctrl.progress">
+                    </uib-progressbar>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-xs-12 ">
+                <p> <span class="text-alert"> Only 3 days left  </span> to fund this project. </p>
+                <p> Join <b> <i> 42 </i> </b> other donors who have already supported this project. Every dollars helps.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-xs-6 ">
+                <input type="number" class="form-control custom-textbox" name="value" ng-model="ctrl.donate">
+                <p class="query-style"> <a href=""> Why give $50 ?</a> </p>
+            </div>
+            <div class="col-lg-6 col-xs-6 ">
+                <button type="submit" class="btn btn-donate btn-success">
+                    Give Now
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xs-12 ">
+                <button type="button" class="btn customised-button " ng-click="ctrl.onSave()">
+                    Save for later
+                </button>
+            </div>
+            <div class="col-md-6 col-xs-12 ">
+                <button type="button" class="btn customised-button " ng-click="ctrl.onShare()">
+                    Tell your friends
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
